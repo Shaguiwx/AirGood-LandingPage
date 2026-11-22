@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Gestiona tu perfil y preferencias en AirGood.">
+
+    <title>Mi perfil | AirGood</title>
+       
+     <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header class="encabezado-principal">
+
+        <div class="marca">
+            <h1>AirGood</h1>
+            <p>Respira informado, vive mejor.</p>
+        </div>
+
+        <nav class="navegacion"
+             aria-label="Navegación principal">
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="alertas.html">Alertas</a></li>
+                <li>
+                    <a href="perfil.html"
+                       aria-current="page">Perfil</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="contenedor-perfil-usuario">
+
+        <!-- Presentación -->
+        <section class="encabezado-seccion">
+
+            <h2>Mi perfil</h2>
+
+            <p>
+                Administra tus datos, ubicaciones
+                y preferencias de AirGood.
+            </p>
+
+        </section>
+
+        <!-- Información personal -->
+        <section class="seccion-datos-personales"
+                 aria-labelledby="titulo-datos">
+
+            <h3 id="titulo-datos">
+                Información personal
+            </h3>
+
+            <form id="form-datos-personales">
+
+                <div class="campo">
+                    <label for="nombre-usuario">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre-usuario"
+                        name="nombre"
+                        autocomplete="name"
+                        placeholder="Tu nombre"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="correo-usuario">
+                        Correo electrónico
+                    </label>
+
+                    <input
+                        type="email"
+                        id="correo-usuario"
+                        name="correo"
+                        autocomplete="email"
+                        placeholder="Tu correo electrónico"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="distrito-principal">
+                        Distrito principal
+                    </label>
+
+                    <select id="distrito-principal"
+                            name="distrito"
+                            required>
+
+                        <option value="">
+                            Selecciona tu distrito
+                        </option>
+                        <option value="ate">Ate</option>
+                        <option value="barranco">Barranco</option>
+                        <option value="miraflores">Miraflores</option>
+                        <option value="san-isidro">San Isidro</option>
+                        <option value="santa-anita">Santa Anita</option>
+                        <option value="surco">Santiago de Surco</option>
+
+                    </select>
+                </div>
+
+                <button type="submit"
+                        class="btn-principal">
+                    Guardar cambios
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Perfil de vulnerabilidad -->
+        <section class="seccion-perfil-salud"
+                 aria-labelledby="titulo-perfil-salud">
+
+            <h3 id="titulo-perfil-salud">
+                Mi perfil de salud
+            </h3>
+
+            <p>
+                Tus recomendaciones se adaptarán
+                a los perfiles seleccionados.
+            </p>
+
+            <fieldset>
+
+                <legend>Mis perfiles</legend>
+
+                <label>
+                    <input type="checkbox"
+                           name="perfil-salud"
+                           value="respiratorio">
+                    Afección respiratoria
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="perfil-salud"
+                           value="cuidador">
+                    Cuidador de niño menor de 5 años
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="perfil-salud"
+                           value="adulto-mayor">
+                    Adulto mayor
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="perfil-salud"
+                           value="deportista">
+                    Deportista
+                </label>
+
+            </fieldset>
+
+            <button type="button"
+                    id="guardar-perfiles"
+                    class="btn-secundario">
+                Actualizar perfiles
+            </button>
+
+        </section>
+
+        <!-- Zonas guardadas -->
+        <section class="seccion-zonas"
+                 aria-labelledby="titulo-zonas">
+
+            <h3 id="titulo-zonas">
+                Mis zonas guardadas
+            </h3>
+
+            <p>
+                Consulta los lugares que deseas
+                monitorear frecuentemente.
+            </p>
+
+            <div id="lista-zonas"
+                 class="lista-zonas">
+
+                <article class="tarjeta-zona">
+
+                    <h4>Casa</h4>
+
+                    <p>
+                        <strong>Distrito:</strong> Ate
+                    </p>
+
+                    <p>
+                        ICA: pendiente de consultar
+                    </p>
+
+                    <label>
+                        <input type="checkbox"
+                               name="alertas-casa"
+                               checked>
+                        Recibir alertas de esta zona
+                    </label>
+
+                    <button type="button"
+                            class="btn-secundario eliminar-zona">
+                        Eliminar zona
+                    </button>
+
+                </article>
+
+                <article class="tarjeta-zona">
+
+                    <h4>Trabajo</h4>
+
+                    <p>
+                        <strong>Distrito:</strong>
+                        San Isidro
+                    </p>
+
+                    <p>
+                        ICA: pendiente de consultar
+                    </p>
+
+                    <label>
+                        <input type="checkbox"
+                               name="alertas-trabajo"
+                               checked>
+                        Recibir alertas de esta zona
+                    </label>
+
+                    <button type="button"
+                            class="btn-secundario eliminar-zona">
+                        Eliminar zona
+                    </button>
+
+                </article>
+
+            </div>
+
+            <button type="button"
+                    id="agregar-zona"
+                    class="btn-principal">
+                Agregar nueva zona
+            </button>
+
+        </section>
+
+        <!-- Sensores vinculados -->
+        <section class="seccion-sensores"
+                 aria-labelledby="titulo-sensores">
+
+            <h3 id="titulo-sensores">
+                Mis sensores vinculados
+            </h3>
+
+            <div id="lista-sensores"
+                 class="lista-sensores">
+
+                <p>
+                    No hay sensores vinculados
+                    en esta demostración.
+                </p>
+
+            </div>
+
+            <form id="form-vincular-sensor">
+
+                <h4>Vincular nuevo sensor</h4>
+
+                <div class="campo">
+                    <label for="nombre-sensor">
+                        Nombre del sensor
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombre-sensor"
+                        name="nombre-sensor"
+                        placeholder="Ej. Sensor de casa"
+                        required>
+                </div>
+
+                <div class="campo">
+                    <label for="codigo-sensor">
+                        Código del dispositivo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="codigo-sensor"
+                        name="codigo-sensor"
+                        placeholder="Ingresa el código"
+                        required>
+                </div>
+
+                <button type="submit"
+                        class="btn-principal">
+                    Vincular sensor
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Accesibilidad -->
+        <section class="seccion-accesibilidad"
+                 aria-labelledby="titulo-accesibilidad">
+
+            <h3 id="titulo-accesibilidad">
+                Accesibilidad
+            </h3>
+
+            <p>
+                Personaliza la apariencia para
+                facilitar la lectura.
+            </p>
+
+            <form id="form-accesibilidad">
+
+                <div class="campo">
+
+                    <label for="tamano-letra">
+                        Tamaño de letra
+                    </label>
+
+                    <select id="tamano-letra"
+                            name="tamano-letra">
+
+                        <option value="normal">
+                            Normal
+                        </option>
+                        <option value="grande">
+                            Grande
+                        </option>
+                        <option value="muy-grande">
+                            Muy grande
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="alto-contraste"
+                            name="alto-contraste">
+
+                        Bordes y textos más marcados
+                    </label>
+
+                </div>
+
+                <button type="submit"
+                        class="btn-principal">
+                    Guardar preferencias
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Recursos de ayuda -->
+        <section class="seccion-ayuda"
+                 aria-labelledby="titulo-ayuda">
+
+            <h3 id="titulo-ayuda">
+                Educación y ayuda
+            </h3>
+
+            <ul>
+                <li>
+                    <a href="educacion.html">
+                        Educación sobre contaminación
+                    </a>
+                </li>
+
+                <li>
+                    <a href="preguntas-frecuentes.html">
+                        Preguntas frecuentes
+                    </a>
+                </li>
+            </ul>
+
+        </section>
+
+        <!-- Cuenta -->
+        <section class="seccion-cuenta"
+                 aria-labelledby="titulo-cuenta">
+
+            <h3 id="titulo-cuenta">
+                Administración de cuenta
+            </h3>
+
+            <button type="button"
+                    id="cerrar-sesion"
+                    class="btn-secundario">
+                Cerrar sesión
+            </button>
+
+        </section>
+
+        <!-- Zona de riesgo -->
+        <section class="seccion-zona-riesgo"
+                 aria-labelledby="titulo-riesgo">
+
+            <h3 id="titulo-riesgo">
+                Zona de riesgo
+            </h3>
+
+            <p>
+                Eliminar tu cuenta borrará
+                permanentemente tus datos personales,
+                preferencias, zonas y reportes,
+                según las condiciones del servicio.
+            </p>
+
+            <button type="button"
+                    id="eliminar-cuenta"
+                    class="btn-peligro">
+                Eliminar mi cuenta y mis datos
+            </button>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>
+            AirGood - Configuración de perfil.
+        </p>
+    </footer>
+
+<!-- Funciones generales -->
+<script src="../js/app.js"></script>
+
+<!-- Gestión del perfil -->
+<script src="../js/perfil.js"></script>
+
+</body>
+</html>

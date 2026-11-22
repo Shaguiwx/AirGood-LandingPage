@@ -1,0 +1,900 @@
+/* AirGood | Estilos base compartidos */
+/* ==========================================================
+   AIRGOOD | STYLES.CSS
+   Estilos generales, componentes y pantallas
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ==========================================================
+   01. VARIABLES GLOBALES
+   ========================================================== */
+
+:root {
+    --verde:#105D3B;
+    --verde-panel:#1B6544;
+    --verde-claro:#E3F2E9;
+    --fondo:#F5F7F4;
+    --blanco:#FFFFFF;
+    --texto:#112017;
+    --secundario:#5A605C;
+    --borde:#E8EDEA;
+    --bueno:#2F9E5E;
+    --moderado:#F0C10F;
+    --sensible:#E97C1D;
+    --danino:#DB3A31;
+    --muy-danino:#8143A4;
+    --radio:18px;
+    --sombra:0 8px 26px rgba(17,32,23,.06);
+    --ancho:1180px
+}
+
+/* ==========================================================
+   02. RESET Y ESTILOS BASE
+   ========================================================== */
+
+* {
+    box-sizing:border-box
+}
+
+html {
+    scroll-behavior:smooth
+}
+
+body {
+    margin:0;
+    background:var(--fondo);
+    color:var(--texto);
+    font-family:Inter,Arial,sans-serif;
+    font-size:16px;
+    line-height:1.6
+}
+
+h1,h2,h3,h4,h5,p {
+    margin-top:0
+}
+
+h1,h2,h3,h4,h5 {
+    font-family:Nunito,Arial,sans-serif;
+    line-height:1.25
+}
+
+h1 {
+    font-size:clamp(1.8rem,3vw,2.5rem)
+}
+
+h2 {
+    font-size:clamp(1.65rem,2.7vw,2.4rem)
+}
+
+h3 {
+    font-size:1.35rem
+}
+
+h4 {
+    font-size:1.08rem
+}
+
+p {
+    color:var(--secundario)
+}
+
+a {
+    color:var(--verde);
+    text-underline-offset:3px
+}
+
+a:hover {
+    text-decoration-thickness:2px
+}
+
+button,input,select,textarea {
+    font:inherit
+}
+
+button {
+    cursor:pointer
+}
+
+button:disabled {
+    opacity:.55;
+    cursor:not-allowed
+}
+
+input,select,textarea {
+    width:100%;
+    min-height:48px;
+    padding:12px 14px;
+    border:1.5px solid #bbc9bf;
+    border-radius:12px;
+    background:#fff;
+    color:var(--texto)
+}
+
+textarea {
+    resize:vertical;
+    min-height:120px
+}
+
+input[type=checkbox],input[type=radio] {
+    width:20px;
+    height:20px;
+    min-height:20px;
+    accent-color:var(--verde);
+    flex:none
+}
+
+input[type=file] {
+    height:auto
+}
+
+label {
+    font-weight:600
+}
+
+label:has(> input[type=checkbox]) {
+    display:flex;
+    align-items:center;
+    gap:10px
+}
+
+fieldset {
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    padding:20px;
+    margin:0 0 20px
+}
+
+legend {
+    font-weight:700;
+    padding:0 8px
+}
+
+ul {
+    padding-left:22px
+}
+
+img,svg {
+    max-width:100%
+}
+
+:focus-visible {
+    outline:3px solid #E97C1D;
+    outline-offset:3px
+}
+
+::placeholder {
+    color:#68786e
+}
+
+/* ==========================================================
+   04. COMPONENTES REUTILIZABLES
+   ========================================================== */
+
+.btn-principal,.btn-secundario,.btn-peligro,button[type=submit] {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:48px;
+    padding:12px 22px;
+    border-radius:12px;
+    font-weight:700;
+    text-align:center;
+    text-decoration:none;
+    transition:transform .15s,background .15s,border-color .15s
+}
+
+.btn-principal,button[type=submit] {
+    background:var(--verde);
+    border:1px solid var(--verde);
+    color:#fff
+}
+
+.btn-principal:hover,button[type=submit]:hover {
+    background:#08482c;
+    transform:translateY(-1px)
+}
+
+.btn-secundario {
+    background:#fff;
+    border:1.5px solid var(--verde);
+    color:var(--verde)
+}
+
+.btn-secundario:hover {
+    background:var(--verde-claro)
+}
+
+.btn-peligro {
+    background:#fff;
+    border:1.5px solid #b42318;
+    color:#a51d16
+}
+
+.btn-peligro:hover {
+    background:#fff1f0
+}
+
+.campo {
+    display:grid;
+    gap:8px;
+    margin-bottom:18px
+}
+
+.campo>label {
+    font-size:14px
+}
+
+.acciones-perfil,.acciones-reporte,.acciones-alerta {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap
+}
+
+/* ==========================================================
+   05. ENCABEZADO Y NAVEGACIÓN
+   ========================================================== */
+
+.encabezado-principal {
+    background:#fff;
+    border-bottom:1px solid var(--borde);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:22px;
+    padding:16px max(24px,calc((100vw - var(--ancho))/2));
+    position:sticky;
+    top:0;
+    z-index:20
+}
+
+.marca h1 {
+    font-size:1.65rem;
+    color:var(--verde);
+    margin:0
+}
+
+.marca p {
+    font-size:.75rem;
+    margin:0
+}
+
+.navegacion ul {
+    display:flex;
+    align-items:center;
+    gap:6px;
+    list-style:none;
+    margin:0;
+    padding:0
+}
+
+.navegacion a {
+    display:block;
+    padding:12px 16px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    color:var(--secundario)
+}
+
+.navegacion a:hover,.navegacion a[aria-current=page] {
+    background:var(--verde-claro);
+    color:var(--verde)
+}
+
+.pie-pagina {
+    border-top:1px solid var(--borde);
+    text-align:center;
+    padding:24px 16px
+}
+
+.pie-pagina p {
+    margin:0;
+    font-size:.85rem
+}
+
+/* ==========================================================
+   03. CONTENEDORES Y TARJETAS
+   ========================================================== */
+
+.contenedor-inicio,.contenedor-mapa,.contenedor-reportes,.contenedor-alertas,.contenedor-perfil-usuario {
+    width:min(var(--ancho),calc(100% - 48px));
+    margin:36px auto 64px
+}
+
+.contenedor-inicio>section,.contenedor-reportes>section,.contenedor-alertas>section,.contenedor-perfil-usuario>section,.contenedor-mapa>section {
+    margin-bottom:26px
+}
+
+.contenedor-inicio>section:not(.seccion-bienvenida),.contenedor-reportes>section:not(.encabezado-seccion),.contenedor-alertas>section:not(.encabezado-seccion),.contenedor-perfil-usuario>section:not(.encabezado-seccion),.controles-mapa,.seccion-mapa,.panel-detalle-estacion {
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:var(--radio);
+    box-shadow:var(--sombra);
+    padding:26px
+}
+
+.encabezado-seccion {
+    margin-bottom:28px
+}
+
+.encabezado-seccion h2 {
+    margin-bottom:10px
+}
+
+.encabezado-seccion p {
+    max-width:740px
+}
+
+.tarjeta-recomendacion,.tarjeta-reporte,.tarjeta-alerta,.tarjeta-zona,.tarjeta-seguridad,.tarjeta-ica {
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:16px;
+    padding:22px
+}
+
+.lista-recomendaciones,.lista-reportes,.lista-alertas,.lista-zonas {
+    display:grid;
+    gap:16px
+}
+
+.lista-recomendaciones {
+    grid-template-columns:repeat(3,minmax(0,1fr))
+}
+
+.lista-reportes,.lista-zonas {
+    grid-template-columns:repeat(2,minmax(0,1fr))
+}
+
+.tarjeta-recomendacion {
+    background:var(--fondo)
+}
+
+.tarjeta-ica {
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:var(--verde-claro)
+}
+
+.indicador-ica {
+    flex:0 0 240px;
+    text-align:center
+}
+
+.valor-ica {
+    display:block;
+    font:800 56px/1.1 Nunito,Arial,sans-serif;
+    color:var(--texto)
+}
+
+.categoria-ica {
+    font-weight:800;
+    color:#7a3d00
+}
+
+.tarjeta-ica small {
+    align-self:end;
+    color:var(--secundario)
+}
+
+.tarjeta-seguridad {
+    border-left:6px solid var(--sensible);
+    background:#fff8ef
+}
+
+.contenedor-pronostico {
+    overflow-x:auto
+}
+
+table {
+    border-collapse:collapse;
+    width:100%;
+    min-width:480px
+}
+
+th,td {
+    padding:14px 16px;
+    text-align:left;
+    border-bottom:1px solid var(--borde)
+}
+
+th {
+    background:var(--verde-claro)
+}
+
+caption {
+    text-align:left;
+    font-weight:700;
+    margin-bottom:10px
+}
+
+.ubicacion-actual {
+    display:grid;
+    gap:8px;
+    max-width:350px
+}
+
+/* ==========================================================
+   06. LOGIN Y REGISTRO
+   ========================================================== */
+
+.contenedor-acceso {
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)
+}
+
+.panel-informativo {
+    background:var(--verde-panel);
+    color:#fff;
+    padding:clamp(36px,7vw,100px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center
+}
+
+.panel-informativo h1,.panel-informativo h2,.panel-informativo p,.panel-informativo li {
+    color:#fff
+}
+
+.panel-informativo h1 {
+    font-size:2.8rem
+}
+
+.panel-informativo h2 {
+    font-size:clamp(1.9rem,3vw,2.8rem)
+}
+
+.panel-informativo p {
+    opacity:.94
+}
+
+.panel-informativo li {
+    margin:10px 0
+}
+
+.panel-formulario {
+    padding:clamp(28px,7vw,100px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    max-width:720px;
+    width:100%;
+    margin:auto
+}
+
+.panel-formulario form {
+    width:100%
+}
+
+.panel-formulario h2 {
+    margin-bottom:12px
+}
+
+.panel-formulario button[type=submit] {
+    width:100%
+}
+
+/* ==========================================================
+   07. SELECCIÓN DE PERFIL
+   ========================================================== */
+
+.contenedor-perfil {
+    max-width:920px;
+    margin:0 auto;
+    padding:36px 24px 70px
+}
+
+.encabezado-perfil {
+    text-align:center;
+    margin-bottom:30px
+}
+
+.encabezado-perfil h1 {
+    color:var(--verde);
+    margin-bottom:4px
+}
+
+.configuracion-perfil {
+    background:#fff;
+    border:1px solid var(--borde);
+    border-radius:24px;
+    padding:clamp(20px,4vw,42px);
+    box-shadow:var(--sombra)
+}
+
+.tarjetas-perfil {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+    margin:16px 0
+}
+
+.tarjeta-perfil {
+    display:grid;
+    grid-template-columns:24px 1fr;
+    gap:5px 12px;
+    border:2px solid var(--borde);
+    border-radius:16px;
+    padding:20px;
+    cursor:pointer
+}
+
+.tarjeta-perfil input {
+    grid-row:span 2;
+    align-self:center
+}
+
+.tarjeta-perfil span {
+    font-size:.88rem;
+    color:var(--secundario);
+    font-weight:400
+}
+
+.tarjeta-perfil:has(input:checked) {
+    border-color:var(--verde);
+    background:var(--verde-claro)
+}
+
+.opcion-general {
+    padding:12px
+}
+
+.grupo-ubicacion .campo {
+    margin-bottom:0
+}
+
+/* ==========================================================
+   09. MAPA
+   ========================================================== */
+
+.controles-mapa form {
+    display:flex;
+    align-items:end;
+    gap:14px;
+    flex-wrap:wrap
+}
+
+.controles-mapa form .campo {
+    flex:1 1 280px;
+    margin:0
+}
+
+.filtros-mapa {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:18px
+}
+
+.distribucion-mapa {
+    display:grid;
+    grid-template-columns:minmax(0,1.65fr) minmax(290px,1fr);
+    gap:20px;
+    align-items:start
+}
+
+.mapa-interactivo {
+    min-height:440px;
+    background:linear-gradient(135deg,#e3f2e9,#d4e8df);
+    border:2px dashed #a7c4b2;
+    border-radius:16px;
+    display:grid;
+    place-items:center;
+    text-align:center;
+    padding:28px;
+    margin-bottom:18px
+}
+
+.mapa-interactivo p {
+    max-width:340px
+}
+
+.leyenda-ica ul {
+    list-style:none;
+    padding:0;
+    display:grid;
+    gap:7px
+}
+
+.leyenda-ica li {
+    padding:8px 12px;
+    border-left:6px solid;
+    border-radius:6px;
+    background:var(--fondo)
+}
+
+.nivel-bueno {
+    border-color:var(--bueno)!important
+}
+
+.nivel-moderado {
+    border-color:var(--moderado)!important
+}
+
+.nivel-sensible {
+    border-color:var(--sensible)!important
+}
+
+.nivel-danino {
+    border-color:var(--danino)!important
+}
+
+.nivel-muy-danino,.nivel-peligroso {
+    border-color:var(--muy-danino)!important
+}
+
+.panel-detalle-estacion {
+    position:sticky;
+    top:110px
+}
+
+.dato-contaminante {
+    padding:12px 0;
+    border-bottom:1px solid var(--borde)
+}
+
+.dato-contaminante h5 {
+    margin-bottom:4px
+}
+
+.dato-contaminante p {
+    margin:0
+}
+
+.reportes-zona {
+    margin:20px 0
+}
+
+/* ==========================================================
+   10. REPORTES
+   ========================================================== */
+
+.filtros-reportes form {
+    display:flex;
+    align-items:end;
+    gap:14px;
+    flex-wrap:wrap
+}
+
+.filtros-reportes form .campo {
+    flex:1 1 200px;
+    margin:0
+}
+
+.tarjeta-reporte {
+    display:flex;
+    flex-direction:column;
+    gap:10px
+}
+
+.tarjeta-reporte footer {
+    margin-top:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap
+}
+
+.etiqueta-reporte,.etiqueta-alerta {
+    display:inline-block;
+    background:var(--verde-claro);
+    color:var(--verde);
+    border-radius:999px;
+    padding:5px 12px;
+    font-size:.8rem;
+    font-weight:700
+}
+
+.seccion-nuevo-reporte {
+    scroll-margin-top:115px
+}
+
+.seccion-nuevo-reporte form {
+    max-width:800px
+}
+
+/* ==========================================================
+   11. ALERTAS
+   ========================================================== */
+
+.filtros-alertas {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:18px
+}
+
+.filtro-alerta {
+    min-height:48px;
+    padding:10px 20px;
+    border:1px solid var(--borde);
+    background:#fff;
+    border-radius:999px;
+    color:var(--verde);
+    font-weight:700
+}
+
+.filtro-alerta.activo,.filtro-alerta[aria-pressed=true] {
+    background:var(--verde);
+    color:#fff
+}
+
+.seccion-filtros-alertas>button {
+    margin-top:6px
+}
+
+.tarjeta-alerta {
+    border-left:6px solid var(--sensible)
+}
+
+.tarjeta-alerta.alerta-mejora {
+    border-left-color:var(--bueno)
+}
+
+.tarjeta-alerta header {
+    display:grid;
+    gap:8px
+}
+
+.tarjeta-alerta time {
+    color:var(--secundario);
+    font-size:.85rem
+}
+
+.tarjeta-alerta footer {
+    margin-top:18px
+}
+
+.marcar-leida {
+    border:0;
+    background:transparent;
+    color:var(--verde);
+    font-weight:700;
+    min-height:48px
+}
+
+.seccion-configuracion-alertas form {
+    max-width:520px
+}
+
+/* ==========================================================
+   12. PERFIL
+   ========================================================== */
+
+.contenedor-perfil-usuario>section:not(.encabezado-seccion) {
+    scroll-margin-top:110px
+}
+
+.contenedor-perfil-usuario form {
+    max-width:750px
+}
+
+.seccion-perfil-salud fieldset {
+    display:grid;
+    gap:12px
+}
+
+.seccion-perfil-salud button {
+    margin-top:12px
+}
+
+.tarjeta-zona {
+    display:grid;
+    gap:8px
+}
+
+.tarjeta-zona p {
+    margin:0
+}
+
+.tarjeta-zona button {
+    justify-self:start
+}
+
+.seccion-zonas>button {
+    margin-top:16px
+}
+
+.seccion-sensores form {
+    margin-top:20px;
+    padding-top:20px;
+    border-top:1px solid var(--borde)
+}
+
+.seccion-ayuda li {
+    margin-bottom:12px
+}
+
+.seccion-zona-riesgo {
+    border-color:#f3c5c2!important;
+    background:#fff8f7!important
+}
+
+.seccion-zona-riesgo h3 {
+    color:#a51d16
+}
+
+/* ==========================================================
+   14. ACCESIBILIDAD Y PREFERENCIAS
+   ========================================================== */
+
+html.letra-grande {
+    font-size:18px
+}
+
+html.letra-muy-grande {
+    font-size:20px
+}
+
+html.alto-contraste {
+    --texto:#07160c;
+    --secundario:#263a2e;
+    --borde:#536e5a
+}
+
+html.alto-contraste input,html.alto-contraste select,html.alto-contraste textarea {
+    border-width:2px
+}
+
+.tarjeta-alerta[hidden] {
+    display: none;
+}
+
+.alerta-leida {
+    opacity: 0.65;
+    background-color: #F5F7F4;
+}
+
+.filtro-alerta.activo {
+    background-color: #105D3B;
+    color: #FFFFFF;
+    border-color: #105D3B;
+}
+
+.mensaje-sistema {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+
+    max-width: 350px;
+    padding: 14px 20px;
+
+    background-color: #FFFFFF;
+    color: #112017;
+
+    border: 1px solid #E8EDEA;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.mensaje-sistema.exito {
+    border-left: 5px solid #105D3B;
+}
+
+.mensaje-sistema.error {
+    border-left: 5px solid #DB3A31;
+}
+
+
+@media(prefers-reduced-motion:reduce) {
+    *,*::before,*::after {
+        scroll-behavior:auto!important;
+        transition:none!important
+    }
+
+}
+
+@media (max-width: 768px) {
+    .mensaje-sistema {
+        left: 16px;
+        right: 16px;
+        bottom: 90px;
+        max-width: none;
+    }
+}

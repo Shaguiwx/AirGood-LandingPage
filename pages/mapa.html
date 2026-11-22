@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Explora la calidad del aire por zonas de Lima.">
+
+    <title>Mapa | AirGood</title>
+       
+     <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="../css/responsive.css">
+     <link rel="stylesheet" href="../css/mejoras.css">
+     <link rel="stylesheet"
+           href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+           crossorigin="">
+</head>
+
+<body>
+
+    <!-- Encabezado y navegación -->
+    <header class="encabezado-principal">
+
+        <div class="marca">
+            <h1>AirGood</h1>
+            <p>Respira informado, vive mejor.</p>
+        </div>
+
+        <nav class="navegacion"
+             aria-label="Navegación principal">
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li>
+                    <a href="mapa.html"
+                       aria-current="page">Mapa</a>
+                </li>
+                <li><a href="reportes.html">Reportes</a></li>
+                <li><a href="alertas.html">Alertas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="contenedor-mapa">
+
+        <!-- Título -->
+        <section class="encabezado-seccion">
+            <h2>Mapa de calidad del aire</h2>
+            <p>
+                Explora los niveles de contaminación
+                en los distritos de Lima.
+            </p>
+        </section>
+
+        <!-- Búsqueda y filtros -->
+        <section class="controles-mapa"
+                 aria-labelledby="titulo-filtros">
+
+            <h3 id="titulo-filtros">
+                Buscar una zona
+            </h3>
+
+            <form id="form-busqueda-mapa"
+                  role="search">
+
+                <div class="campo">
+                    <label for="buscar-distrito">
+                        Distrito o zona
+                    </label>
+
+                    <input
+                        type="search"
+                        id="buscar-distrito"
+                        name="distrito"
+                        placeholder="Ej. Ate, Miraflores..."
+                        list="distritos-lima">
+
+                    <datalist id="distritos-lima">
+                        <option value="Ate">
+                        <option value="Barranco">
+                        <option value="Breña">
+                        <option value="Chorrillos">
+                        <option value="Comas">
+                        <option value="La Molina">
+                        <option value="Miraflores">
+                        <option value="San Isidro">
+                        <option value="Santa Anita">
+                        <option value="Santiago de Surco">
+                    </datalist>
+                </div>
+
+                <button type="submit"
+                        class="btn-principal">
+                    Buscar
+                </button>
+
+                <button type="button"
+                        id="btn-filtros-mapa"
+                        class="btn-filtros"
+                        aria-expanded="false"
+                        aria-controls="panel-filtros-mapa"
+                        aria-label="Filtros del mapa">
+                    <span data-icono="filtros"></span>
+                </button>
+
+            </form>
+
+            <div class="filtros-mapa" id="panel-filtros-mapa">
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="mostrar-parques"
+                        name="mostrar-parques">
+
+                    Mostrar áreas verdes y parques
+                </label>
+
+                <label>
+                    <input
+                        type="checkbox"
+                        id="mostrar-sensores"
+                        name="mostrar-sensores"
+                        checked>
+
+                    Mostrar sensores comunitarios
+                </label>
+
+            </div>
+
+        </section>
+
+        <!-- Mapa y detalle -->
+        <div class="distribucion-mapa">
+
+            <section class="seccion-mapa"
+                     aria-labelledby="titulo-mapa">
+
+                <h3 id="titulo-mapa">
+                    Calidad del aire por zona
+                </h3>
+
+                <!-- Contenedor para el mapa dinámico -->
+                <div id="mapa-interactivo"
+                     class="mapa-interactivo"
+                     role="region"
+                     aria-label="Mapa de contaminación de Lima">
+
+                    <p>
+                        El mapa interactivo se incorporará
+                        durante la integración con JavaScript.
+                    </p>
+
+                </div>
+
+                <!-- Leyenda -->
+                <aside class="leyenda-ica"
+                       aria-labelledby="titulo-leyenda">
+
+                    <h4 id="titulo-leyenda">
+                        Niveles de calidad del aire
+                    </h4>
+
+                    <ul>
+                        <li class="nivel-bueno">
+                            0 - 50: Bueno
+                        </li>
+                        <li class="nivel-moderado">
+                            51 - 100: Moderado
+                        </li>
+                        <li class="nivel-sensible">
+                            101 - 150: Dañino para sensibles
+                        </li>
+                        <li class="nivel-danino">
+                            151 - 200: Dañino
+                        </li>
+                        <li class="nivel-muy-danino">
+                            201 - 300: Muy dañino
+                        </li>
+                        <li class="nivel-peligroso">
+                            301 o más: Peligroso
+                        </li>
+                    </ul>
+
+                </aside>
+
+                <a href="reportes.html#nuevo-reporte"
+                   class="btn-principal">
+                    Crear nuevo reporte ciudadano
+                </a>
+
+            </section>
+
+            <!-- Panel de detalle de estación -->
+            <aside class="panel-detalle-estacion"
+                   aria-labelledby="titulo-estacion">
+
+                <header>
+                    <h3 id="titulo-estacion">
+                        Detalle de la estación
+                    </h3>
+                    <p>
+                        Selecciona una estación en el mapa
+                        para consultar sus mediciones.
+                    </p>
+                </header>
+
+                <!-- Se rellenará dinámicamente -->
+                <div id="datos-estacion"
+                     class="datos-estacion"
+                     aria-live="polite">
+
+                    <p>
+                        No hay ninguna estación seleccionada.
+                    </p>
+
+                </div>
+
+                <section class="contaminantes">
+                    <h4>Contaminantes</h4>
+
+                    <div class="dato-contaminante">
+                        <h5>PM2.5</h5>
+                        <p id="valor-pm25">
+                            Sin datos
+                        </p>
+                    </div>
+
+                    <div class="dato-contaminante">
+                        <h5>PM10</h5>
+                        <p id="valor-pm10">
+                            Sin datos
+                        </p>
+                    </div>
+
+                    <div class="dato-contaminante">
+                        <h5>Ozono (O3)</h5>
+                        <p id="valor-ozono">
+                            Sin datos
+                        </p>
+                    </div>
+
+                    <p>
+                        La comparación con los valores
+                        de referencia de la OMS se
+                        mostrará cuando existan
+                        mediciones y periodos compatibles.
+                    </p>
+                </section>
+
+                <section class="reportes-zona">
+                    <h4>Reportes de esta zona</h4>
+
+                    <div id="lista-reportes-zona">
+                        <p>
+                            Selecciona una estación para
+                            consultar los reportes cercanos.
+                        </p>
+                    </div>
+                </section>
+
+                <a href="reportes.html#nuevo-reporte"
+                   class="btn-secundario">
+                    Crear reporte de esta zona
+                </a>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>
+            AirGood - Monitoreo de la calidad
+            del aire en Lima.
+        </p>
+    </footer>
+
+<!-- Funciones generales -->
+<script src="../js/app.js"></script>
+
+<!-- Mapa y estaciones -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+<script src="../js/mapa.js"></script>
+
+</body>
+</html>

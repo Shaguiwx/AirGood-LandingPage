@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Consulta y crea reportes ciudadanos sobre contaminación en Lima.">
+
+    <title>Reportes | AirGood</title>
+       
+     <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header class="encabezado-principal">
+
+        <div class="marca">
+            <h1>AirGood</h1>
+            <p>Respira informado, vive mejor.</p>
+        </div>
+
+        <nav class="navegacion"
+             aria-label="Navegación principal">
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li>
+                    <a href="reportes.html"
+                       aria-current="page">Reportes</a>
+                </li>
+                <li><a href="alertas.html">Alertas</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="contenedor-reportes">
+
+        <!-- Presentación -->
+        <section class="encabezado-seccion">
+
+            <h2>Reportes ciudadanos</h2>
+
+            <p>
+                Comparte información sobre problemas
+                de contaminación en tu zona y
+                conoce los reportes de la comunidad.
+            </p>
+
+            <a href="#nuevo-reporte"
+               class="btn-principal">
+                Crear nuevo reporte
+            </a>
+
+        </section>
+
+        <!-- Filtros -->
+        <section class="filtros-reportes"
+                 aria-labelledby="titulo-filtros">
+
+            <h3 id="titulo-filtros">
+                Explorar reportes
+            </h3>
+
+
+            <!-- Chips de tipo de incidente (solo móvil) -->
+            <div class="chips-categorias"
+                 role="group"
+                 aria-label="Tipo de incidente">
+
+                <button type="button" class="chip-categoria"
+                        data-valor="todos" aria-pressed="true">
+                    <span class="icono-circulo" data-icono="todos"></span>
+                    Todos
+                </button>
+
+                <button type="button" class="chip-categoria"
+                        data-valor="humo" aria-pressed="false">
+                    <span class="icono-circulo" data-icono="humo"></span>
+                    Humo
+                </button>
+
+                <button type="button" class="chip-categoria"
+                        data-valor="trafico" aria-pressed="false">
+                    <span class="icono-circulo" data-icono="trafico"></span>
+                    Tráfico
+                </button>
+
+                <button type="button" class="chip-categoria"
+                        data-valor="polvo" aria-pressed="false">
+                    <span class="icono-circulo" data-icono="polvo"></span>
+                    Polvo
+                </button>
+
+                <button type="button" class="chip-categoria"
+                        data-valor="obras" aria-pressed="false">
+                    <span class="icono-circulo" data-icono="obras"></span>
+                    Obras
+                </button>
+
+                <button type="button" class="chip-categoria"
+                        data-valor="industrial" aria-pressed="false">
+                    <span class="icono-circulo" data-icono="industrial"></span>
+                    Industria
+                </button>
+
+            </div>
+
+            <form id="form-filtros-reportes">
+
+                <div class="campo">
+                    <label for="filtro-distrito">
+                        Distrito
+                    </label>
+
+                    <select id="filtro-distrito"
+                            name="distrito">
+
+                        <option value="todos">
+                            Todos los distritos
+                        </option>
+                        <option value="ate">Ate</option>
+                        <option value="miraflores">Miraflores</option>
+                        <option value="san-isidro">San Isidro</option>
+                        <option value="santa-anita">Santa Anita</option>
+                        <option value="surco">Santiago de Surco</option>
+                    </select>
+                </div>
+
+                <div class="campo campo-categoria">
+                    <label for="filtro-categoria">
+                        Tipo de incidente
+                    </label>
+
+                    <select id="filtro-categoria"
+                            name="categoria">
+
+                        <option value="todos">Todos</option>
+                        <option value="humo">Humo</option>
+                        <option value="trafico">Tráfico vehicular</option>
+                        <option value="polvo">Polvo</option>
+                        <option value="obras">Obras de construcción</option>
+                        <option value="industrial">Emisiones industriales</option>
+                    </select>
+                </div>
+
+                <button type="submit"
+                        class="btn-secundario">
+                    Aplicar filtros
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Listado de reportes -->
+        <section class="seccion-listado-reportes"
+                 aria-labelledby="titulo-listado">
+
+            <h3 id="titulo-listado">
+                Reportes de la comunidad
+            </h3>
+
+            <p>
+                Ejemplos ilustrativos.
+                No son incidentes verificados.
+            </p>
+
+            <div id="lista-reportes"
+                 class="lista-reportes">
+
+                <article class="tarjeta-reporte" data-distrito="ate" data-tipo="trafico">
+
+                    <header>
+                        <h4>Tráfico vehicular intenso</h4>
+                        <span class="etiqueta-reporte">
+                            Tráfico
+                        </span>
+                    </header>
+
+                    <p><strong>Distrito:</strong> Ate</p>
+
+                    <p>
+                        Presencia de humo vehicular
+                        en una avenida con alto tránsito.
+                    </p>
+
+                    <footer>
+                        <span>Reporte de ejemplo</span>
+                        <button type="button"
+                                class="btn-secundario"
+                                disabled>
+                            Ver detalles
+                        </button>
+                    </footer>
+
+                </article>
+
+                <article class="tarjeta-reporte" data-distrito="santa-anita" data-tipo="obras">
+
+                    <header>
+                        <h4>Polvo por obras</h4>
+                        <span class="etiqueta-reporte">
+                            Construcción
+                        </span>
+                    </header>
+
+                    <p>
+                        <strong>Distrito:</strong>
+                        Santa Anita
+                    </p>
+
+                    <p>
+                        Acumulación de polvo cerca
+                        de una zona de construcción.
+                    </p>
+
+                    <footer>
+                        <span>Reporte de ejemplo</span>
+                        <button type="button"
+                                class="btn-secundario"
+                                disabled>
+                            Ver detalles
+                        </button>
+                    </footer>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Formulario para nuevo reporte -->
+        <section id="nuevo-reporte"
+                 class="seccion-nuevo-reporte"
+                 aria-labelledby="titulo-nuevo-reporte">
+
+            <h3 id="titulo-nuevo-reporte">
+                Crear reporte ciudadano
+            </h3>
+
+            <p>
+                Describe el incidente ambiental
+                que observaste en tu zona.
+            </p>
+
+            <form id="form-nuevo-reporte">
+
+                <!-- Tipo de incidente -->
+                <div class="campo">
+
+                    <label for="tipo-incidente">
+                        Tipo de incidente
+                    </label>
+
+                    <select id="tipo-incidente"
+                            name="tipo-incidente"
+                            required>
+
+                        <option value="">
+                            Selecciona una categoría
+                        </option>
+                        <option value="humo">Humo</option>
+                        <option value="trafico">Tráfico vehicular</option>
+                        <option value="polvo">Polvo</option>
+                        <option value="obras">Obras y construcción</option>
+                        <option value="industrial">Emisiones industriales</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Ubicación -->
+                <fieldset class="grupo-ubicacion">
+
+                    <legend>Ubicación del incidente</legend>
+
+                    <div class="campo">
+                        <label for="distrito-reporte">
+                            Distrito
+                        </label>
+
+                        <select id="distrito-reporte"
+                                name="distrito"
+                                required>
+
+                            <option value="">
+                                Selecciona el distrito
+                            </option>
+                            <option value="ate">Ate</option>
+                            <option value="barranco">Barranco</option>
+                            <option value="chorrillos">Chorrillos</option>
+                            <option value="miraflores">Miraflores</option>
+                            <option value="san-isidro">San Isidro</option>
+                            <option value="santa-anita">Santa Anita</option>
+                            <option value="surco">Santiago de Surco</option>
+
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="referencia">
+                            Dirección o referencia
+                        </label>
+
+                        <input
+                            type="text"
+                            id="referencia"
+                            name="referencia"
+                            placeholder="Ej. Av. principal, cerca del parque"
+                            required>
+                    </div>
+
+                    <button type="button"
+                            id="btn-ubicacion"
+                            class="btn-secundario">
+                        Usar mi ubicación actual
+                    </button>
+
+                    <p id="estado-ubicacion"
+                       role="status">
+                        Ubicación GPS no seleccionada.
+                    </p>
+
+                    <input type="hidden"
+                           id="latitud"
+                           name="latitud">
+
+                    <input type="hidden"
+                           id="longitud"
+                           name="longitud">
+
+                </fieldset>
+
+                <!-- Intensidad -->
+                <div class="campo">
+
+                    <label for="intensidad">
+                        Intensidad percibida
+                    </label>
+
+                    <select id="intensidad"
+                            name="intensidad"
+                            required>
+
+                        <option value="">
+                            Selecciona la intensidad
+                        </option>
+                        <option value="baja">Baja</option>
+                        <option value="media">Media</option>
+                        <option value="alta">Alta</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Descripción -->
+                <div class="campo">
+
+                    <label for="descripcion">
+                        Descripción del incidente
+                    </label>
+
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Describe lo que está ocurriendo..."
+                        required></textarea>
+
+                    <small>
+                        Máximo 500 caracteres.
+                    </small>
+
+                </div>
+
+                <!-- Horario -->
+                <div class="campo">
+
+                    <label for="fecha-incidente">
+                        Fecha y hora del incidente
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        id="fecha-incidente"
+                        name="fecha-incidente"
+                        required>
+
+                </div>
+
+                <!-- Evidencia -->
+                <div class="campo">
+
+                    <label for="foto-incidente">
+                        Adjuntar fotografía (opcional)
+                    </label>
+
+                    <input
+                        type="file"
+                        id="foto-incidente"
+                        name="foto-incidente"
+                        accept="image/*">
+
+                </div>
+
+                <!-- Acciones -->
+                <div class="acciones-reporte">
+
+                    <button type="submit"
+                            class="btn-principal">
+                        Publicar reporte
+                    </button>
+
+                    <button type="reset"
+                            class="btn-secundario">
+                        Limpiar formulario
+                    </button>
+
+                    <a href="mapa.html">
+                        Cancelar y volver al mapa
+                    </a>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>
+            AirGood - Reportes ciudadanos
+            de calidad del aire.
+        </p>
+    </footer>
+    
+<!-- Funciones generales -->
+<script src="../js/app.js"></script>
+
+<!-- Reportes ciudadanos -->
+<script src="../js/reportes.js"></script>
+
+
+</body>
+</html>

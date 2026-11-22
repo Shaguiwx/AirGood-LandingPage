@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Personaliza tu experiencia en AirGood.">
+
+    <title>Seleccionar perfil | AirGood</title>
+     
+     <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <main class="contenedor-perfil">
+
+        <!-- Encabezado -->
+        <header class="encabezado-perfil">
+            <h1>AirGood</h1>
+            <p>Personaliza tu experiencia</p>
+        </header>
+
+        <section class="configuracion-perfil"
+                 aria-labelledby="titulo-perfil">
+
+            <h2 id="titulo-perfil">
+                ¿Cuál es tu perfil?
+            </h2>
+
+            <p>
+                Selecciona las opciones que mejor
+                describan tu situación.
+            </p>
+
+            <form id="form-perfil">
+
+                <!-- Opciones de vulnerabilidad -->
+                <fieldset class="grupo-perfiles">
+
+                    <legend>Selecciona tu perfil</legend>
+
+                    <div class="tarjetas-perfil">
+
+                        <label class="tarjeta-perfil">
+                            <input
+                                type="checkbox"
+                                name="perfil"
+                                value="respiratorio">
+
+                            <strong>Afección respiratoria</strong>
+                            <span>
+                                Para personas con asma u otras
+                                condiciones respiratorias.
+                            </span>
+                        </label>
+
+                        <label class="tarjeta-perfil">
+                            <input
+                                type="checkbox"
+                                name="perfil"
+                                value="cuidador">
+
+                            <strong>Cuidador de un niño</strong>
+                            <span>
+                                Para padres o cuidadores de
+                                niños menores de 5 años.
+                            </span>
+                        </label>
+
+                        <label class="tarjeta-perfil">
+                            <input
+                                type="checkbox"
+                                name="perfil"
+                                value="adulto-mayor">
+
+                            <strong>Adulto mayor</strong>
+                            <span>
+                                Para personas de 60 años
+                                o más.
+                            </span>
+                        </label>
+
+                        <label class="tarjeta-perfil">
+                            <input
+                                type="checkbox"
+                                name="perfil"
+                                value="deportista">
+
+                            <strong>Deportista</strong>
+                            <span>
+                                Para quienes realizan actividades
+                                físicas al aire libre.
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <label class="opcion-general">
+                        <input
+                            type="checkbox"
+                            id="perfil-general"
+                            name="perfil"
+                            value="general">
+
+                        Solo quiero informarme
+                    </label>
+
+                </fieldset>
+
+                <!-- Distrito principal -->
+                <fieldset class="grupo-ubicacion">
+
+                    <legend>Tu ubicación principal</legend>
+
+                    <div class="campo">
+                        <label for="distrito">
+                            Selecciona tu distrito
+                        </label>
+
+                        <select
+                            id="distrito"
+                            name="distrito"
+                            required>
+
+                            <option value="">
+                                Selecciona un distrito
+                            </option>
+
+                            <option value="ate">Ate</option>
+                            <option value="barranco">Barranco</option>
+                            <option value="brena">Breña</option>
+                            <option value="callao">Callao</option>
+                            <option value="chorrillos">Chorrillos</option>
+                            <option value="comas">Comas</option>
+                            <option value="jesus-maria">Jesús María</option>
+                            <option value="la-molina">La Molina</option>
+                            <option value="la-victoria">La Victoria</option>
+                            <option value="lima">Lima</option>
+                            <option value="los-olivos">Los Olivos</option>
+                            <option value="miraflores">Miraflores</option>
+                            <option value="pachacamac">Pachacámac</option>
+                            <option value="san-borja">San Borja</option>
+                            <option value="san-isidro">San Isidro</option>
+                            <option value="san-miguel">San Miguel</option>
+                            <option value="santa-anita">Santa Anita</option>
+                            <option value="surco">Santiago de Surco</option>
+                            <option value="surquillo">Surquillo</option>
+
+                        </select>
+                    </div>
+
+                </fieldset>
+
+                <!-- Acciones -->
+                <div class="acciones-perfil">
+
+                    <button type="submit"
+                            class="btn-principal">
+                        Continuar
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+    <!-- Funciones generales -->
+<script src="../js/app.js"></script>
+
+<!-- Selección de perfil -->
+<script src="../js/seleccionar-perfil.js"></script>
+
+</body>
+</html>

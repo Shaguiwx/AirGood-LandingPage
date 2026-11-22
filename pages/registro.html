@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Crea tu cuenta en AirGood para monitorear la calidad del aire.">
+
+    <title>Crear cuenta | AirGood</title>
+
+     <link rel="stylesheet" href="../css/style.css">
+     <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+    <main class="contenedor-acceso">
+
+        <!-- Panel informativo izquierdo -->
+        <section class="panel-informativo">
+
+            <header class="marca">
+                <h1>AirGood</h1>
+                <p>Respira informado, vive mejor.</p>
+            </header>
+
+            <div class="informacion">
+
+                <h2>Comienza a cuidar el aire que respiras</h2>
+
+                <p>
+                    Únete a AirGood y mantente informado
+                    sobre la contaminación ambiental
+                    en los distritos de Lima.
+                </p>
+
+                <ul>
+                    <li>Consulta información de tu distrito.</li>
+                    <li>Personaliza tus alertas ambientales.</li>
+                    <li>Recibe recomendaciones según tu perfil.</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+        <!-- Panel derecho: registro -->
+        <section class="panel-formulario"
+                 aria-labelledby="titulo-registro">
+
+            <div class="contenido-formulario">
+
+                <header>
+                    <h2 id="titulo-registro">Crear cuenta</h2>
+                    <p>
+                        Completa tus datos para registrarte
+                        en AirGood.
+                    </p>
+                </header>
+
+                <form id="form-registro">
+
+                    <div class="campo">
+                        <label for="nombre">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Ingresa tu nombre completo"
+                            autocomplete="name"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="ejemplo@correo.com"
+                            autocomplete="email"
+                            required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="contrasena">Contraseña</label>
+                        <input
+                            type="password"
+                            id="contrasena"
+                            name="contrasena"
+                            placeholder="Mínimo 8 caracteres"
+                            minlength="8"
+                            autocomplete="new-password"
+                            aria-describedby="ayuda-contrasena"
+                            required>
+
+                        <small id="ayuda-contrasena">
+                            Tu contraseña debe tener al menos
+                            8 caracteres.
+                        </small>
+                    </div>
+
+                    <div class="campo">
+                        <label for="confirmar-contrasena">
+                            Confirmar contraseña
+                        </label>
+                        <input
+                            type="password"
+                            id="confirmar-contrasena"
+                            name="confirmar-contrasena"
+                            placeholder="Repite tu contraseña"
+                            minlength="8"
+                            autocomplete="new-password"
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn-principal">
+                        Crear cuenta
+                    </button>
+
+                </form>
+
+                <footer class="pie-formulario">
+                    <p>
+                        ¿Ya tienes una cuenta?
+                        <a href="login.html">Iniciar sesión</a>
+                    </p>
+                </footer>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- Funciones generales -->
+<script src="../js/app.js"></script>
+
+<!-- Registro e inicio de sesión -->
+<script src="../js/auth.js"></script>
+
+</body>
+</html>
