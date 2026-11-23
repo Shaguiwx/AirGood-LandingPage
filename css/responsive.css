@@ -1,572 +1,407 @@
-/* ==========================================================
-   AIRGOOD | RESPONSIVE.CSS
-   Adaptaciones por tamaño de pantalla
-   ========================================================== */
-
-/* 01. TABLETS Y PANTALLAS MEDIANAS */
-@media(max-width:1024px) {
-    .encabezado-principal {
-        padding:14px 24px
+@media(max-width:1120px) {
+    .shell {
+        width:min(100% - 38px,1140px)
     }
-
-    .navegacion a {
-        padding:10px 12px
+    .nav-links {
+        gap:11px
     }
-
-    .distribucion-mapa {
-        grid-template-columns:minmax(0,1fr) 320px
+    .nav-links>a {
+        font-size:.76rem
     }
-
-    .tarjeta-ica {
-        flex-wrap:wrap
+    .header-row {
+        gap:12px
     }
-
-    .indicador-ica {
-        flex-basis:190px
+    .nav-panel {
+        gap:10px
     }
-
-    .lista-recomendaciones {
-        grid-template-columns:repeat(2,minmax(0,1fr))
+    .hero-grid {
+        gap:38px
     }
-
+    .map-layout {
+        grid-template-columns:300px 1fr
+    }
+    .auth-grid {
+        gap:30px
+    }
+    
 }
 
-/* 02. CELULARES */
-@media(max-width:768px) {
-    body {
-        padding-bottom:74px
+@media(max-width:950px) {
+    .menu-toggle {
+        display:inline-flex;
+        align-items:center;
+        gap:6px;
+        background:#edf8f1;
+        color:#135735;
+        padding:10px 13px;
+        border-radius:9px;
+        border:1px solid #cee7d6;
+        font-weight:800
     }
-
-    .encabezado-principal {
-        position:relative;
-        padding:14px 18px;
-        display:block
-    }
-
-    .marca h1 {
-        font-size:1.45rem
-    }
-
-    .marca p {
-        font-size:.7rem
-    }
-
-    /* Barra de navegación inferior compartida */
-    .navegacion {
-        position:fixed;
-        bottom:0;
+    .nav-panel {
+        display:none;
+        position:absolute;
         left:0;
         right:0;
-        z-index:50;
+        top:77px;
         background:#fff;
-        border-top:1px solid var(--borde);
-        box-shadow:0 -5px 18px rgba(17,32,23,.08);
-        padding:6px 4px max(6px,env(safe-area-inset-bottom))
+        border-bottom:1px solid var(--line);
+        box-shadow:0 15px 30px #0002;
+        flex-direction:column;
+        align-items:stretch;
+        padding:22px 26px;
+        max-height:75vh;
+        overflow-y:auto
     }
-
-    .navegacion ul {
-        display:grid;
-        grid-template-columns:repeat(5,minmax(0,1fr));
-        gap:2px
+    .nav-panel.is-open {
+        display:flex
     }
-
-    .navegacion a {
-        font-size:.72rem;
-        padding:12px 2px;
-        text-align:center;
-        min-height:48px;
-        display:grid;
-        place-items:center;
-        border-radius:14px
+    .nav-links,.nav-actions {
+        flex-direction:column;
+        align-items:stretch;
+        gap:0
     }
-
-    .contenedor-inicio,.contenedor-mapa,.contenedor-reportes,.contenedor-alertas,.contenedor-perfil-usuario {
-        width:calc(100% - 28px);
-        margin:24px auto 40px
+    .nav-links>a {
+        font-size:.93rem;
+        padding:12px 0;
+        border-bottom:1px solid var(--line)
     }
-
-    .contenedor-inicio>section:not(.seccion-bienvenida),.contenedor-reportes>section:not(.encabezado-seccion),.contenedor-alertas>section:not(.encabezado-seccion),.contenedor-perfil-usuario>section:not(.encabezado-seccion),.controles-mapa,.seccion-mapa,.panel-detalle-estacion {
-        padding:20px
+    .nav-actions {
+        gap:8px;
+        padding-top:14px
     }
-
-    .distribucion-mapa {
-        grid-template-columns:1fr
-    }
-
-    .panel-detalle-estacion {
-        position:static
-    }
-
-    .mapa-interactivo {
-        min-height:340px
-    }
-
-    .lista-recomendaciones,.lista-reportes,.lista-zonas {
-        grid-template-columns:1fr
-    }
-
-    .tarjeta-ica {
-        display:block;
-        text-align:center
-    }
-
-    .indicador-ica {
-        margin-bottom:18px
-    }
-
-    .tarjeta-ica small {
-        display:block;
-        margin-top:14px
-    }
-
-    .contenedor-acceso {
+    .hero-grid {
         grid-template-columns:1fr;
-        min-height:auto
+        gap:70px
     }
-
-    .panel-informativo {
-        padding:28px 22px
+    .hero {
+        padding:70px 0 82px
     }
-
-    .panel-informativo h1 {
-        font-size:2rem
+    .hero h1 {
+        max-width:720px
     }
-
-    .panel-informativo h2 {
-        font-size:1.6rem
+    .hero p {
+        max-width:660px
     }
-
-    .panel-formulario {
-        padding:30px 22px 45px;
-        max-width:600px
-    }
-
-    .contenedor-perfil {
-        padding:24px 14px 42px
-    }
-
-    .tarjetas-perfil {
-        grid-template-columns:1fr
-    }
-
-    .filtros-reportes form,.controles-mapa form {
-        display:grid;
-        grid-template-columns:1fr
-    }
-
-    .filtros-reportes form .campo,.controles-mapa form .campo {
+    .hero-dashboard {
+        max-width:650px;
+        transform:none;
+        margin:0 auto;
         width:100%
     }
-
-    .pie-pagina {
-        padding-bottom:22px
+    .consult-layout,.contact-grid,.faq-layout {
+        grid-template-columns:1fr;
+        gap:30px
     }
-
+    .contact-visual {
+        max-width:680px
+    }
+    .auth-grid {
+        grid-template-columns:1fr;
+        gap:12px
+    }
+    .auth-story {
+        padding:0 10px
+    }
+    .auth-card {
+        max-width:620px;
+        width:100%;
+        margin-inline:auto
+    }
+    .quick-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .map-layout {
+        grid-template-columns:1fr
+    }
+    .map-sidebar {
+        display:block
+    }
+    .map-main {
+        min-height:540px
+    }
+    .real-map {
+        height:510px
+    }
+    .map-options {
+        display:flex;
+        gap:20px;
+        flex-wrap:wrap
+    }
+    .alerts-layout,.profile-layout {
+        grid-template-columns:1fr
+    }
+    .profile-aside {
+        position:static
+    }
+    .profile-links {
+        grid-template-columns:repeat(2,1fr);
+        gap:0 20px
+    }
+    .foot-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+    .detail-sections {
+        grid-template-columns:1fr
+    }
+    .detail-sections>.card:last-child {
+        grid-column:auto
+    }
+    .report-layout {
+        grid-template-columns:1fr
+    }
+    .report-side {
+        grid-template-columns:1fr 1fr
+    }
+    .reports-grid,.park-grid {
+        grid-template-columns:repeat(2,1fr)
+    }
+    
 }
 
-/* 03. CELULARES PEQUEÑOS */
-@media(max-width:480px) {
-    h2 {
-        font-size:1.7rem
+@media(max-width:650px) {
+    .shell {
+        width:calc(100% - 30px)
     }
-
-    h3 {
-        font-size:1.2rem
+    .section {
+        padding:56px 0
     }
-
-    .contenedor-inicio>section:not(.seccion-bienvenida),.contenedor-reportes>section:not(.encabezado-seccion),.contenedor-alertas>section:not(.encabezado-seccion),.contenedor-perfil-usuario>section:not(.encabezado-seccion),.controles-mapa,.seccion-mapa,.panel-detalle-estacion {
-        padding:16px
+    .small-section {
+        padding:30px 0 62px
     }
-
-    .tarjeta-perfil,.tarjeta-reporte,.tarjeta-alerta,.tarjeta-zona,.tarjeta-recomendacion {
-        padding:16px
+    .heading h1 {
+        font-size:2rem
     }
-
-    .acciones-reporte,.acciones-alerta {
+    .utility-inner>span {
+        display:none
+    }
+    .utility-inner {
+        justify-content:flex-end
+    }
+    .header-row {
+        height:65px
+    }
+    .nav-panel {
+        top:65px
+    }
+    .hero {
+        padding:65px 0 78px
+    }
+    .hero h1 {
+        font-size:2.66rem
+    }
+    .hero p {
+        font-size:.95rem
+    }
+    .hero-buttons {
+        flex-direction:column
+    }
+    .hero-buttons .btn {
+        width:100%
+    }
+    .hero-dashboard {
+        padding:20px
+    }
+    .floating-label {
+        right:12px
+    }
+    .preview-score strong {
+        font-size:4.25rem
+    }
+    .preview-chart {
+        height:110px
+    }
+    .hero-trust {
+        gap:10px
+    }
+    .benefits-grid,.tools-grid,.quick-grid,.chart-layout,.dashboard-grid,.detail-sections,.compare-grid,.reports-grid,.park-grid,.profile-list,.report-side {
+        grid-template-columns:1fr
+    }
+    .feature-card p {
+        min-height:0
+    }
+    .feature-card {
+        padding:22px
+    }
+    .tools-grid {
+        gap:10px
+    }
+    .consult-controls {
+        padding:20px
+    }
+    .aqi-result {
+        padding:21px
+    }
+    .aqi-middle>div:first-child strong {
+        font-size:4.1rem
+    }
+    .aqi-orbit {
+        width:83px;
+        height:83px;
+        box-shadow:0 0 0 11px #ffffff08
+    }
+    .aqi-orbit span {
+        width:55px;
+        height:55px
+    }
+    .aqi-top {
+        gap:8px
+    }
+    .card {
+        padding:20px
+    }
+    .under-result {
+        display:grid
+    }
+    .faq-layout {
+        gap:22px
+    }
+    .contact-grid {
+        gap:22px
+    }
+    .footer {
+        padding-top:48px
+    }
+    .foot-grid {
+        grid-template-columns:1fr 1fr;
+        gap:24px 10px
+    }
+    .foot-grid>div:first-child,.foot-grid>div:last-child {
+        grid-column:1/-1
+    }
+    .foot-bottom {
+        flex-direction:column;
+        gap:6px
+    }
+    .auth-section {
+        padding:32px 0
+    }
+    .auth-story {
+        padding:0
+    }
+    .auth-story h1 {
+        font-size:2.3rem
+    }
+    .auth-mark {
+        margin-bottom:13px
+    }
+    .auth-card {
+        padding:22px
+    }
+    .dashboard-heading,.card-section-heading,.split-heading {
+        align-items:start;
+        flex-direction:column;
+        gap:12px
+    }
+    .field-inline {
+        width:100%;
+        min-width:0
+    }
+    .dashboard-grid>.card {
+        padding:20px
+    }
+    .dashboard-grid>.card:has(.aqi-result) {
+        padding:0
+    }
+    .quick-grid {
+        gap:10px;
+        margin-bottom:20px
+    }
+    .chart-card {
+        padding:18px
+    }
+    .hour-bars,.history-bars {
+        height:160px
+    }
+    .hour-bar small,.history-col small {
+        font-size:.5rem
+    }
+    .map-sidebar {
+        padding:19px
+    }
+    .real-map {
+        height:430px
+    }
+    .map-main {
+        min-height:430px
+    }
+    .map-pin>span:last-child {
+        display:none
+    }
+    .map-under {
+        flex-direction:column;
+        align-items:flex-start
+    }
+    .map-topline {
+        padding:10px
+    }
+    .map-overlay-title {
+        font-size:1.6rem
+    }
+    .map-pin .pin-inner {
+        width:31px;
+        height:31px;
+        font-size:.71rem
+    }
+    .compare-inputs,.form-two {
+        grid-template-columns:1fr
+    }
+    .compare-control {
+        padding:18px
+    }
+    .compare-card {
+        padding:25px
+    }
+    .alert-item {
+        padding:18px;
+        gap:11px
+    }
+    .filter-controls {
+        width:100%;
+        flex-direction:column
+    }
+    .filter-controls .input {
+        width:100%
+    }
+    .location-box {
+        padding:14px
+    }
+    .profile-links {
+        grid-template-columns:1fr
+    }
+    .profile-aside {
+        padding:22px
+    }
+    .danger-box {
         flex-direction:column;
         align-items:stretch
     }
-
-    .acciones-reporte>* ,.acciones-alerta>* {
-        width:100%;
-        text-align:center
+    .form-actions {
+        flex-direction:column
     }
-
-    .mapa-interactivo {
-        min-height:280px
-    }
-
-    .filtros-mapa {
-        display:grid;
-        gap:10px
-    }
-
-    .valor-ica {
-        font-size:48px
-    }
-
-    .panel-informativo {
-        padding:22px 18px
-    }
-
-    .panel-formulario {
-        padding:26px 18px 36px
-    }
-
-    .btn-principal,.btn-secundario,.btn-peligro,button[type=submit] {
+    .form-actions .btn {
         width:100%
     }
-
-    .filtros-alertas {
-        display:grid;
-        grid-template-columns:repeat(3,minmax(0,1fr));
-        gap:4px
+    .next-action {
+        align-items:stretch;
+        flex-direction:column
     }
-
-    .filtro-alerta {
-        padding:10px 4px;
-        font-size:.75rem
+    .modal-box {
+        padding:22px
     }
-
+    .legend-grid {
+        gap:8px
+    }
+    
 }
 
-
-/* ==========================================================
-   04. ELEMENTOS SOLO PARA MÓVIL
-   Ocultos por defecto: en escritorio no se ven.
-   ========================================================== */
-.saludo-movil,
-.ica-cta,
-.seccion-carrusel,
-.chips-categorias,
-.btn-filtros,
-.nav-icono {
-    display: none
-}
-
-.icono-circulo {
-    display: grid;
-    place-items: center;
-    flex: none;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--verde-claro);
-    color: var(--verde)
-}
-
-.icono-circulo svg {
-    width: 22px;
-    height: 22px
-}
-
-.insignia-ica {
-    display: inline-block;
-    width: fit-content;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: .85rem;
-    font-weight: 800;
-    margin: 4px 0 10px
-}
-
-@media(max-width:768px) {
-
-    /* ---------- Barra inferior con íconos ---------- */
-    .navegacion a,
-    .navegacion a:hover,
-    .navegacion a[aria-current=page] {
-        background: transparent;
-        gap: 2px;
-        padding: 6px 2px
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior:auto
     }
-
-    .nav-icono {
-        display: grid;
-        place-items: center;
-        width: 56px;
-        height: 30px;
-        border-radius: 999px
+    *,*:before,*:after {
+        animation-duration:.01ms!important;
+        transition-duration:.01ms!important
     }
-
-    .nav-icono svg {
-        width: 22px;
-        height: 22px
-    }
-
-    .navegacion a:hover .nav-icono,
-    .navegacion a[aria-current=page] .nav-icono {
-        background: var(--verde-claro)
-    }
-
-    .navegacion a[aria-current=page] {
-        color: var(--verde)
-    }
-
-    /* ---------- Texto que sigue disponible para lectores de pantalla ---------- */
-    .seccion-bienvenida h2,
-    .seccion-bienvenida>p,
-    .controles-mapa h3,
-    .controles-mapa .campo>label {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0 0 0 0);
-        white-space: nowrap
-    }
-
-    /* ---------- Inicio: saludo y campana ---------- */
-    .saludo-movil {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 18px
-    }
-
-    .avatar-iniciales {
-        display: grid;
-        place-items: center;
-        flex: none;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--verde);
-        color: #fff;
-        font: 800 1.15rem Nunito, Arial, sans-serif
-    }
-
-    .saludo-texto {
-        flex: 1;
-        min-width: 0
-    }
-
-    .saludo-texto p {
-        margin: 0;
-        font-size: .85rem
-    }
-
-    .saludo-texto strong {
-        display: block;
-        font: 800 1.2rem/1.2 Nunito, Arial, sans-serif;
-        color: var(--texto)
-    }
-
-    .btn-campana {
-        position: relative;
-        display: grid;
-        place-items: center;
-        flex: none;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: #fff;
-        border: 1px solid var(--borde);
-        color: var(--verde)
-    }
-
-    .btn-campana svg {
-        width: 24px;
-        height: 24px
-    }
-
-    .punto-alerta {
-        position: absolute;
-        top: 10px;
-        right: 12px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--danino);
-        border: 2px solid #fff
-    }
-
-    .punto-alerta[hidden] {
-        display: none
-    }
-
-    /* ---------- Inicio: la tarjeta del ICA lleva a la acción principal ---------- */
-    .ica-cta {
-        display: inline-flex;
-        width: 100%;
-        margin-top: 14px
-    }
-
-    /* ---------- Inicio: carruseles horizontales ---------- */
-    .contenedor-inicio>section.seccion-carrusel {
-        display: block;
-        background: none;
-        border: 0;
-        box-shadow: none;
-        padding: 0
-    }
-
-    .cabecera-carrusel {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 12px;
-        margin-bottom: 12px
-    }
-
-    .cabecera-carrusel h2 {
-        margin: 0;
-        font-size: 1.25rem
-    }
-
-    .cabecera-carrusel a {
-        font-weight: 700;
-        font-size: .9rem;
-        white-space: nowrap
-    }
-
-    .carrusel {
-        display: flex;
-        gap: 12px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        margin: 0 -14px;
-        padding: 2px 14px 8px;
-        scroll-padding-left: 14px;
-        scrollbar-width: none
-    }
-
-    .carrusel::-webkit-scrollbar {
-        display: none
-    }
-
-    .tarjeta-carrusel {
-        flex: 0 0 74%;
-        max-width: 280px;
-        scroll-snap-align: start;
-        display: grid;
-        gap: 6px;
-        align-content: start;
-        padding: 16px;
-        background: #fff;
-        border: 1px solid var(--borde);
-        border-radius: 16px
-    }
-
-    .tarjeta-carrusel strong {
-        font: 800 1.05rem/1.25 Nunito, Arial, sans-serif
-    }
-
-    .tarjeta-carrusel p,
-    .tarjeta-carrusel small {
-        margin: 0
-    }
-
-    .texto-corto {
-        font-size: .9rem;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden
-    }
-
-    .carrusel-vacio {
-        margin: 0;
-        padding: 16px;
-        width: 100%;
-        background: #fff;
-        border: 1px dashed var(--borde);
-        border-radius: 16px
-    }
-
-    /* ---------- Mapa: buscador con botón de filtros ---------- */
-    .controles-mapa form {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        gap: 10px
-    }
-
-    .controles-mapa form .campo {
-        flex: 1;
-        min-width: 0;
-        width: auto
-    }
-
-    .controles-mapa form button[type=submit] {
-        display: none
-    }
-
-    .btn-filtros {
-        display: grid;
-        place-items: center;
-        flex: none;
-        width: 48px;
-        min-height: 48px;
-        border: 0;
-        border-radius: 12px;
-        background: var(--verde);
-        color: #fff
-    }
-
-    .btn-filtros svg {
-        width: 22px;
-        height: 22px
-    }
-
-    .controles-mapa .filtros-mapa {
-        display: none
-    }
-
-    .controles-mapa .filtros-mapa.abierto {
-        display: grid;
-        gap: 10px;
-        margin-top: 14px
-    }
-
-    /* ---------- Reportes: chips de tipo de incidente ---------- */
-    .chips-categorias {
-        display: flex;
-        gap: 10px;
-        overflow-x: auto;
-        padding: 2px 0 12px;
-        scrollbar-width: none
-    }
-
-    .chips-categorias::-webkit-scrollbar {
-        display: none
-    }
-
-    .chip-categoria {
-        display: grid;
-        justify-items: center;
-        gap: 6px;
-        flex: none;
-        width: 68px;
-        padding: 0;
-        border: 0;
-        background: none;
-        font-size: .75rem;
-        font-weight: 700;
-        color: var(--secundario)
-    }
-
-    .chip-categoria .icono-circulo {
-        width: 56px;
-        height: 56px;
-        background: #fff;
-        border: 1.5px solid var(--borde)
-    }
-
-    .chip-categoria[aria-pressed=true] {
-        color: var(--verde)
-    }
-
-    .chip-categoria[aria-pressed=true] .icono-circulo {
-        background: var(--verde);
-        border-color: var(--verde);
-        color: #fff
-    }
-
-    .filtros-reportes .campo-categoria {
-        display: none
-    }
-
+    
 }

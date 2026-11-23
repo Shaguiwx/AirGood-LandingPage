@@ -1,0 +1,122 @@
+{
+  "passed": 29,
+  "total": 29,
+  "tests": [
+    {
+      "name": "50 puntos transcritos",
+      "passed": true
+    },
+    {
+      "name": "20 distritos de Lima con estaciones",
+      "passed": true
+    },
+    {
+      "name": "7 meses de 2023",
+      "passed": true
+    },
+    {
+      "name": "San Juan de Lurigancho mayor que Miraflores promedio",
+      "passed": true
+    },
+    {
+      "name": "San Juan de Lurigancho 45.90 en junio",
+      "passed": true
+    },
+    {
+      "name": "San Juan de Lurigancho 34.64 en diciembre",
+      "passed": true
+    },
+    {
+      "name": "Miraflores promedio de 3 puntos, sin sustituir",
+      "passed": true
+    },
+    {
+      "name": "Ate 4 puntos",
+      "passed": true
+    },
+    {
+      "name": "No inventa para distritos sin datos",
+      "passed": true
+    },
+    {
+      "name": "Ranking identifica primero SJL en promedio",
+      "passed": true
+    },
+    {
+      "name": "Ranking identifica menor Chorrillos entre monitoreados",
+      "passed": true
+    },
+    {
+      "name": "Ranking no incluye Callao ni Ventanilla",
+      "passed": true
+    },
+    {
+      "name": "Selectores renderizados",
+      "passed": true
+    },
+    {
+      "name": "Dos tarjetas con valores",
+      "passed": true
+    },
+    {
+      "name": "No se muestra US AQI como dato ATU",
+      "passed": true
+    },
+    {
+      "name": "Diferencia calculada para SJL-Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Se muestran puntos específicos",
+      "passed": true
+    },
+    {
+      "name": "Ranking renderiza 20 distritos",
+      "passed": true
+    },
+    {
+      "name": "Mes Junio mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Mes Julio mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Mes Agosto mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Mes Setiembre mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Mes Octubre mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Mes Noviembre mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Mes Diciembre mantiene SJL mayor que Miraflores",
+      "passed": true
+    },
+    {
+      "name": "Comparación de 3 distritos",
+      "passed": true
+    },
+    {
+      "name": "Comparación de extremos dinámica",
+      "passed": true
+    },
+    {
+      "name": "Datos se cargan antes del controlador",
+      "passed": true
+    },
+    {
+      "name": "Documento incluye fuente",
+      "passed": true
+    }
+  ]
+}
